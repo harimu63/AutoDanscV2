@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Setup Xray Core + Nginx Reverse Proxy - by znandev
+# Setup Xray Core + Nginx Reverse Proxy - by GEN
 
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -19,12 +19,12 @@ echo -e "${RED}Run install/nginx.sh first${NC}"
 exit 1
 fi
 
-if [[ ! -f ~/AutoscriptXRAY/config/xray.json ]]; then
+if [[ ! -f ~/danautoscript/config/xray.json ]]; then
 echo -e "${RED}[ERROR] xray.json not found!${NC}"
 exit 1
 fi
 
-if [[ ! -f ~/AutoscriptXRAY/config/xray.conf ]]; then
+if [[ ! -f ~/danautoscript/config/xray.conf ]]; then
 echo -e "${RED}[ERROR] xray.conf not found!${NC}"
 exit 1
 fi
@@ -137,10 +137,10 @@ chmod 644 /etc/xray/cert.crt
 
 # ================= XRAY CONFIG =================
 
-cp ~/AutoscriptXRAY/config/xray.json \
+cp ~/danautoscript/config/xray.json \
 /etc/xray/config.json
 
-cp ~/AutoscriptXRAY/config/xray.conf \
+cp ~/danautoscript/config/xray.conf \
 /etc/nginx/conf.d/xray.conf
 
 chmod 644 /etc/xray/config.json

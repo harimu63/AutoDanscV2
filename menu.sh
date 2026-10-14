@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ZNANDEV XRAY PANEL
+# GEN XRAY PANEL
 
 # ================= COLOR =================
 PANEL_VERSION="v2.1.1"
@@ -173,7 +173,7 @@ cut -d':' -f2 | sort -u | wc -l)
 clear
 
 echo -ne "${RED}"
-printf "⚡ Loading ZNANDEV XRAY PANEL ⚡" | type_text
+printf "⚡ Loading DANAUTOSCRIPT PANEL ⚡" | type_text
 echo -e "${NC}"
 
 loading "Loading System Modules"
@@ -189,7 +189,7 @@ clear
 # ================= HEADER =================
 
 echo -e "${CYAN}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${NC}"
-echo -e "${CYAN}┃${WHITE}          ⚡ ZNANDEV XRAY PANEL ⚡          ${CYAN}┃${NC}"
+echo -e "${CYAN}┃${WHITE}          ⚡ DANAUTOSCRIPT PANEL ⚡         ${CYAN}┃${NC}"
 echo -e "${CYAN}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${NC}"
 
 # ================= SYSTEM INFO =================
@@ -258,7 +258,7 @@ echo -e " [7] ${WHITE}UDP ZIVPN${NC}    [x] ${WHITE}EXIT${NC}"
 echo -e "${RED}└─────────────────────────────────────────────┘${NC}"
 
 echo -e "${RED}┌──────────────── LICENSE ────────────────────┐${NC}"
-echo -e " ${WHITE}License${NC} : ZNDEV-ULTIMATE-2026"
+echo -e " ${WHITE}License${NC} : GEN-ULTIMATE-2026"
 echo -e " ${WHITE}Type${NC}    : Lifetime Premium"
 echo -e "${RED}└─────────────────────────────────────────────┘${NC}"
 

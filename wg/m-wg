@@ -1,5 +1,5 @@
 #!/bin/bash
-# Menu WireGuard - by znand-dev
+# Menu WireGuard - by GEN
 
 # Warna
 GREEN='\e[1;32m'
@@ -24,17 +24,17 @@ case $opt in
 
 1)
 clear
-bash /etc/autoscriptvpn/wg/wg-add.sh
+bash /etc/danautoscript/wg/wg-add.sh
 ;;
 
 2)
 clear
-bash /etc/autoscriptvpn/wg/wg-del.sh
+bash /etc/danautoscript/wg/wg-del.sh
 ;;
 
 3)
 clear
-bash /etc/autoscriptvpn/wg/wg-show.sh
+bash /etc/danautoscript/wg/wg-show.sh
 ;;
 
 4)

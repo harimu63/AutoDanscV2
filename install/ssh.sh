@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Setup SSH WebSocket + UDPGW - by znandev
+# Setup SSH WebSocket + UDPGW - by GEN
 
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -16,7 +16,7 @@ sleep 1
 
 # ================= VALIDATION =================
 
-if [[ ! -f ~/AutoscriptXRAY/config/issue.net ]]; then
+if [[ ! -f ~/danautoscript/config/issue.net ]]; then
     echo -e "${RED}[ERROR] issue.net not found!${NC}"
     exit 1
 fi
@@ -90,7 +90,7 @@ dropbearkey -t ecdsa -f /etc/dropbear/dropbear_ecdsa_host_key
 
 # ================= BANNER =================
 
-cp ~/AutoscriptXRAY/config/issue.net /etc/issue.net
+cp ~/danautoscript/config/issue.net /etc/issue.net
 chmod 644 /etc/issue.net
 
 # ================= DROPBEAR CONFIG =================
@@ -127,7 +127,7 @@ if ! command -v go >/dev/null 2>&1; then
     apt install -y golang-go
 fi
 
-cd ~/AutoscriptXRAY/internal/go || exit 1
+cd ~/danautoscript/internal/go || exit 1
 
 go build -ldflags="-s -w" \
     -o /usr/local/bin/dropbearws \
@@ -146,10 +146,10 @@ go build -ldflags="-s -w" \
 chmod +x /usr/local/bin/dropbearws
 chmod +x /usr/local/bin/stunnelws
 
-cp ~/AutoscriptXRAY/internal/go/dropbear-ws.service \
+cp ~/danautoscript/internal/go/dropbear-ws.service \
     /etc/systemd/system/dropbear-ws.service
 
-cp ~/AutoscriptXRAY/internal/go/stunnel-ws.service \
+cp ~/danautoscript/internal/go/stunnel-ws.service \
     /etc/systemd/system/stunnel-ws.service
 
 
@@ -169,7 +169,7 @@ chmod +x /usr/local/bin/badvpn-udpgw
 
 # ================= UDPGW SERVICE =================
 
-cp ~/AutoscriptXRAY/sshws/udpgw.service \
+cp ~/danautoscript/sshws/udpgw.service \
 /etc/systemd/system/
 
 # ================= INSTALL UDP CUSTOM =================
@@ -188,12 +188,12 @@ chmod +x /usr/local/bin/udp-custom
 
 mkdir -p /etc/udp-custom
 
-cp ~/AutoscriptXRAY/config/udp-custom.json \
+cp ~/danautoscript/config/udp-custom.json \
 /etc/udp-custom/config.json
 
 # ================= UDP CUSTOM SERVICE =================
 
-cp ~/AutoscriptXRAY/sshws/udp-custom.service \
+cp ~/danautoscript/sshws/udp-custom.service \
 /etc/systemd/system/
 
 # ================= PERMISSION =================

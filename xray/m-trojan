@@ -1,5 +1,5 @@
 #!/bin/bash
-# Menu Trojan - by znand-dev
+# Menu Trojan - by GEN
 
 # Warna
 GREEN='\e[1;32m'
@@ -22,19 +22,19 @@ read -p "👉 Pilih opsi: " opt
 
 case $opt in
 1) 
-bash /etc/autoscriptvpn/xray/add-trojan.sh 
+bash /etc/danautoscript/xray/add-trojan.sh 
 ;;
 
 2) 
-bash /etc/autoscriptvpn/xray/del-trojan.sh 
+bash /etc/danautoscript/xray/del-trojan.sh 
 ;;
 
 3)
-bash /etc/autoscriptvpn/xray/cek-trojan.sh 
+bash /etc/danautoscript/xray/cek-trojan.sh 
 ;;
 
 4) 
-bash /etc/autoscriptvpn/xray/renew-trojan.sh 
+bash /etc/danautoscript/xray/renew-trojan.sh 
 ;;
 
 x) 

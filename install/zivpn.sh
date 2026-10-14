@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==========================================
-# ZNAND UDP ZIVPN INSTALLER
+# GEN UDP ZIVPN INSTALLER
 # ==========================================
 
 clear

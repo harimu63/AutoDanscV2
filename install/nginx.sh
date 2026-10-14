@@ -1,11 +1,11 @@
 #!/bin/bash
-# Install Nginx Reverse Proxy - by znand-dev
+# Install Nginx Reverse Proxy - by GEN
 
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-BASE_DIR="/root/AutoscriptXRAY"
+BASE_DIR="/root/danautoscript"
 
 if [[ ! -d "$BASE_DIR" ]]; then
     echo -e "${RED}[ERROR] Repo not found!${NC}"

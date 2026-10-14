@@ -58,7 +58,7 @@ echo "$user $exp" >> $DB
 # REBUILD CONFIG
 # ==============================
 
-bash /root/AutoscriptXRAY/udp/rebuild-config.sh
+bash /root/danautoscript/udp/rebuild-config.sh
 
 # ==============================
 # GET DOMAIN

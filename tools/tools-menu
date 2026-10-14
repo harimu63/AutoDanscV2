@@ -1,5 +1,5 @@
 #!/bin/bash
-# Menu Tools by znand-dev
+# Menu Tools by GEN
 
 # Warna
 CYAN='\e[1;36m'
@@ -20,10 +20,10 @@ echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━�
 read -p "👉 Pilih opsi: " opt
 
 case $opt in
-1) bash /etc/autoscriptvpn/tools/backup.sh ;;
-2) bash /etc/autoscriptvpn/tools/speedtest.sh ;;
-3) bash /etc/autoscriptvpn/tools/domain.sh ;;
-4) bash /etc/autoscriptvpn/tools/running.sh ;;
+1) bash /etc/danautoscript/tools/backup.sh ;;
+2) bash /etc/danautoscript/tools/speedtest.sh ;;
+3) bash /etc/danautoscript/tools/domain.sh ;;
+4) bash /etc/danautoscript/tools/running.sh ;;
 x) menu ;;
 *) echo "❌ Pilihan salah!" ; sleep 1 ; tools-menu ;;
 esac

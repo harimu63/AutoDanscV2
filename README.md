@@ -1,4 +1,4 @@
-# Autoscript XRAY
+# Danautoscript XRAY
 
 ## Features
 
@@ -40,8 +40,8 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 # clone the repos
-git clone https://github.com/znandev/AutoscriptXRAY.git
-cd AutoscriptXRAY
+git clone https://github.com/yourusername/danautoscript.git
+cd danautoscript
 
 # run main installer
 chmod +x setup.sh
@@ -133,6 +133,7 @@ systemctl status udpgw
 
 ## ❤️ Credits
 
+* GEN - Danautoscript
 * XTLS / Xray-core
 * BadVPN
 * WireGuard

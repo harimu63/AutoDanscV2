@@ -81,22 +81,22 @@ read -rp "Select Menu : " opt
 
 case $opt in
 1)
-bash /etc/autoscriptvpn/udp/add-zivpn.sh
+bash /etc/danautoscript/udp/add-zivpn.sh
 ;;
 2)
-bash /etc/autoscriptvpn/udp/trial-zivpn.sh
+bash /etc/danautoscript/udp/trial-zivpn.sh
 ;;
 3)
-bash /etc/autoscriptvpn/udp/renew-zivpn.sh
+bash /etc/danautoscript/udp/renew-zivpn.sh
 ;;
 4)
-bash /etc/autoscriptvpn/udp/del-zivpn.sh
+bash /etc/danautoscript/udp/del-zivpn.sh
 ;;
 5)
-bash /etc/autoscriptvpn/udp/cek-zivpn.sh
+bash /etc/danautoscript/udp/cek-zivpn.sh
 ;;
 6)
-bash /etc/autoscriptvpn/udp/monitor-zivpn.sh
+bash /etc/danautoscript/udp/monitor-zivpn.sh
 ;;
 7)
 systemctl restart zivpn

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Uninstall Script - AutoscriptXRAY by znandev
+# Uninstall Script - Danautoscript by GEN
 
 # ================= COLOR =================
 
@@ -10,7 +10,7 @@ YELLOW='\033[1;33m'
 CYAN='\033[1;36m'
 NC='\033[0m'
 
-BASE_DIR="/root/AutoscriptXRAY"
+BASE_DIR="/root/danautoscript"
 
 # ================= CHECK ROOT =================
 
@@ -22,7 +22,7 @@ fi
 # ================= FUNCTION =================
 
 confirm() {
-read -rp "❗ Yakin ingin menghapus semua layanan AutoscriptXRAY? [y/N]: " confirm
+read -rp "❗ Yakin ingin menghapus semua layanan Danautoscript? [y/N]: " confirm
 
 [[ "$confirm" =~ ^[Yy]$ ]] || {
     echo -e "${YELLOW}Batal uninstall.${NC}"
@@ -50,7 +50,7 @@ confirm
 clear
 
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${YELLOW}🚮 UNINSTALL AUTOSCRIPTXRAY${NC}"
+echo -e "${YELLOW}🚮 UNINSTALL DANAUTOSCRIPT${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 # ================= STOP SERVICES =================
@@ -117,7 +117,7 @@ rm -rf /etc/xray
 rm -rf /etc/v2ray
 rm -rf /etc/zivpn
 rm -rf /etc/wireguard
-rm -rf /etc/autoscriptvpn
+rm -rf /etc/danautoscript
 rm -rf /etc/udp-custom
 
 rm -f /etc/nginx/conf.d/xray.conf
@@ -211,7 +211,7 @@ rm -f /tmp/xray.zip
 
 # ================= REMOVE SOURCE =================
 
-info "Removing AutoscriptXRAY source..."
+info "Removing Danautoscript source..."
 
 rm -rf "$BASE_DIR"
 
@@ -220,7 +220,7 @@ rm -rf "$BASE_DIR"
 clear
 
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${GREEN}✅ AUTOSCRIPTXRAY REMOVED${NC}"
+echo -e "${GREEN}✅ DANAUTOSCRIPT REMOVED${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 echo ""

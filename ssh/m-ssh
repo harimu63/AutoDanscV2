@@ -32,7 +32,7 @@ case $x in
 
 1)
 clear
-bash /etc/autoscriptvpn/ssh/addssh.sh
+bash /etc/danautoscript/ssh/addssh.sh
 ;;
 
 2)

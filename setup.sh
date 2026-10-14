@@ -1,7 +1,8 @@
 #!/bin/bash
 # ==========================================
-# Setup Script XRAY_AIO
+# Setup Script DANAUTOSCRIPT
 # XRAY + WireGuard + UDP ZIVPN
+# By GEN
 # ==========================================
 
 echo "" > /root/log-install.txt
@@ -242,17 +243,17 @@ chmod +x tools/*.sh
 # COPY RUNTIME SCRIPT
 # ==========================================
 
-info "Menyalin semua submenu ke /etc/autoscriptvpn/..."
+info "Menyalin semua submenu ke /etc/danautoscript/..."
 
-mkdir -p /etc/autoscriptvpn/{ssh,xray,wg,udp,tools}
+mkdir -p /etc/danautoscript/{ssh,xray,wg,udp,tools}
 
-cp -r ssh/* /etc/autoscriptvpn/ssh/
-cp -r xray/* /etc/autoscriptvpn/xray/
-cp -r wg/* /etc/autoscriptvpn/wg/
-cp -r udp/* /etc/autoscriptvpn/udp/
-cp -r tools/* /etc/autoscriptvpn/tools/
+cp -r ssh/* /etc/danautoscript/ssh/
+cp -r xray/* /etc/danautoscript/xray/
+cp -r wg/* /etc/danautoscript/wg/
+cp -r udp/* /etc/danautoscript/udp/
+cp -r tools/* /etc/danautoscript/tools/
 
-chmod +x /etc/autoscriptvpn/*/*.sh
+chmod +x /etc/danautoscript/*/*.sh
 
 # ==========================================
 # AUTO MENU LOGIN

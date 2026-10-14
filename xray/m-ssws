@@ -1,5 +1,5 @@
 #!/bin/bash
-# Menu Shadowsocks WS - by znand-dev
+# Menu Shadowsocks WS - by GEN
 
 # Warna
 GREEN='\e[1;32m'
@@ -20,10 +20,10 @@ echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━�
 read -p "👉 Pilih opsi: " opt
 
 case $opt in
-1) bash /etc/autoscriptvpn/xray/add-ssws.sh ;;
-2) bash /etc/autoscriptvpn/xray/del-ssws.sh ;;
-3) bash /etc/autoscriptvpn/xray/cek-ssws.sh ;;
-4) bash /etc/autoscriptvpn/xray/renew-ssws.sh ;;
+1) bash /etc/danautoscript/xray/add-ssws.sh ;;
+2) bash /etc/danautoscript/xray/del-ssws.sh ;;
+3) bash /etc/danautoscript/xray/cek-ssws.sh ;;
+4) bash /etc/danautoscript/xray/renew-ssws.sh ;;
 x) menu ;;
 *)
 echo "❌ Pilihan salah!"
