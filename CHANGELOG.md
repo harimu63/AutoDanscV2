@@ -10,7 +10,7 @@
 
 ### 🆕 New Features
 - ✅ **Auto Update from GitHub** - Update script langsung dari repository
-  - Source: `github.com/harimu63/danautoscript`
+  - Source: `github.com/harimu63/AutoDanscV2`
   - Auto backup before update
   - Rollback on failure
   - Version tracking support
@@ -92,8 +92,8 @@ All original features preserved:
 ### 🎯 Installation
 ```bash
 # Clone repository
-git clone https://github.com/harimu63/danautoscript.git
-cd danautoscript
+git clone https://github.com/harimu63/AutoDanscV2.git
+cd AutoDanscV2
 
 # Run installer
 chmod +x setup.sh

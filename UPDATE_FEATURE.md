@@ -71,8 +71,9 @@ tools/
 Update script menggunakan config:
 ```bash
 GITHUB_USER="harimu63"
-GITHUB_REPO="danautoscript"
-GITHUB_URL="https://github.com/harimu63/danautoscript.git"
+GITHUB_REPO="AutoDanscV2"
+GITHUB_BRANCH="main"
+GITHUB_URL="https://github.com/harimu63/AutoDanscV2.git"
 ```
 
 Jika ingin ganti repository, edit file `/etc/danautoscript/tools/update.sh`
@@ -111,7 +112,7 @@ Update versi ini setiap kali ada perubahan besar.
 ```
 Developer (You)
     ↓
-Push update ke GitHub
+Push update ke GitHub (harimu63/AutoDanscV2)
     ↓
 User di VPS
     ↓
@@ -150,9 +151,9 @@ git --version
 
 # Manual update
 cd /root
-rm -rf danautoscript
-git clone https://github.com/harimu63/danautoscript.git
-cd danautoscript
+rm -rf AutoDanscV2
+git clone https://github.com/harimu63/AutoDanscV2.git
+cd AutoDanscV2
 bash setup.sh
 ```
 
@@ -163,8 +164,8 @@ ls -la /root/danautoscript-backup-*
 
 # Restore backup tertentu
 cd /root
-rm -rf danautoscript
-cp -r danautoscript-backup-TIMESTAMP danautoscript
+rm -rf AutoDanscV2
+cp -r danautoscript-backup-TIMESTAMP AutoDanscV2
 ```
 
 ---
@@ -201,7 +202,7 @@ cp -r danautoscript-backup-TIMESTAMP danautoscript
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📝 Update Summary:
- • Source: github.com/harimu63/danautoscript
+ • Source: github.com/harimu63/AutoDanscV2
  • Install Dir: /root/danautoscript
  • Backup: /root/danautoscript-backup-20261014-120530
 

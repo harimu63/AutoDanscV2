@@ -117,6 +117,8 @@ menu → [8] TOOLS → [5] Update Danautoscript
 bash /etc/danautoscript/tools/update.sh
 ```
 
+**Repository:** https://github.com/harimu63/AutoDanscV2
+
 ---
 
 ## 🚀 Next Steps
@@ -124,12 +126,12 @@ bash /etc/danautoscript/tools/update.sh
 ### 1. Update Repository URL (Already Set!)
 Repository URL sudah diset ke:
 ```bash
-git clone https://github.com/harimu63/danautoscript.git
+git clone https://github.com/harimu63/AutoDanscV2.git
 ```
 
 ### 2. Test Installation
 ```bash
-cd danautoscript
+cd AutoDanscV2
 chmod +x setup.sh
 ./setup.sh
 ```

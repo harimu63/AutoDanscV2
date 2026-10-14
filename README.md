@@ -39,7 +39,7 @@ bash /etc/danautoscript/tools/update.sh
 ```
 
 Auto update features:
-- ✅ Download latest from GitHub (harimu63/danautoscript)
+- ✅ Download latest from GitHub (harimu63/AutoDanscV2)
 - ✅ Auto backup before update
 - ✅ Rollback on failure
 - ✅ Version tracking
@@ -60,8 +60,8 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 # clone the repos
-git clone https://github.com/harimu63/danautoscript.git
-cd danautoscript
+git clone https://github.com/harimu63/AutoDanscV2.git
+cd AutoDanscV2
 
 # run main installer
 chmod +x setup.sh

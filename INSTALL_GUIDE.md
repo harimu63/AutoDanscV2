@@ -41,8 +41,8 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 # Clone repository
-git clone https://github.com/yourusername/danautoscript.git
-cd danautoscript
+git clone https://github.com/harimu63/AutoDanscV2.git
+cd AutoDanscV2
 
 # Run installer
 chmod +x setup.sh
@@ -156,7 +156,7 @@ systemctl status udpgw
 To completely remove Danautoscript:
 
 ```bash
-cd danautoscript
+cd AutoDanscV2
 bash uninstall.sh
 ```
 
@@ -165,7 +165,7 @@ bash uninstall.sh
 ## 🔄 Update
 
 ```bash
-cd danautoscript
+cd AutoDanscV2
 git pull
 bash setup.sh
 ```
