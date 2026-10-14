@@ -23,7 +23,7 @@ GITHUB_USER="harimu63"
 GITHUB_REPO="AutoDanscV2"
 GITHUB_BRANCH="main"
 GITHUB_URL="https://github.com/${GITHUB_USER}/${GITHUB_REPO}.git"
-INSTALL_DIR="/root/danautoscript"
+INSTALL_DIR="/root/AutoDanscV2"
 BACKUP_DIR="/root/danautoscript-backup-$(date +%Y%m%d-%H%M%S)"
 
 # ==========================================

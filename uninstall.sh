@@ -10,7 +10,7 @@ YELLOW='\033[1;33m'
 CYAN='\033[1;36m'
 NC='\033[0m'
 
-BASE_DIR="/root/danautoscript"
+BASE_DIR="/root/AutoDanscV2"
 
 # ================= CHECK ROOT =================
 

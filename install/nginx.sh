@@ -5,7 +5,7 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-BASE_DIR="/root/danautoscript"
+BASE_DIR="/root/AutoDanscV2"
 
 if [[ ! -d "$BASE_DIR" ]]; then
     echo -e "${RED}[ERROR] Repo not found!${NC}"

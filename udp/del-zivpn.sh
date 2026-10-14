@@ -84,7 +84,7 @@ sed -i "/^$user /d" $DB
 # REBUILD CONFIG
 # ==============================
 
-bash /root/danautoscript/udp/rebuild-config.sh
+bash /root/AutoDanscV2/udp/rebuild-config.sh
 
 clear
 

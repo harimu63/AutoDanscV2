@@ -19,12 +19,12 @@ echo -e "${RED}Run install/nginx.sh first${NC}"
 exit 1
 fi
 
-if [[ ! -f ~/danautoscript/config/xray.json ]]; then
+if [[ ! -f ~/AutoDanscV2/config/xray.json ]]; then
 echo -e "${RED}[ERROR] xray.json not found!${NC}"
 exit 1
 fi
 
-if [[ ! -f ~/danautoscript/config/xray.conf ]]; then
+if [[ ! -f ~/AutoDanscV2/config/xray.conf ]]; then
 echo -e "${RED}[ERROR] xray.conf not found!${NC}"
 exit 1
 fi
@@ -137,10 +137,10 @@ chmod 644 /etc/xray/cert.crt
 
 # ================= XRAY CONFIG =================
 
-cp ~/danautoscript/config/xray.json \
+cp ~/AutoDanscV2/config/xray.json \
 /etc/xray/config.json
 
-cp ~/danautoscript/config/xray.conf \
+cp ~/AutoDanscV2/config/xray.conf \
 /etc/nginx/conf.d/xray.conf
 
 chmod 644 /etc/xray/config.json
