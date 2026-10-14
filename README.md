@@ -8,7 +8,8 @@
 | XRAY Core   | VMess, VLESS, Trojan, Shadowsocks, gRPC, NGINX Reverse Proxy, Auto SSL            |
 | WireGuard   | WireGuard VPN, Client Generator, QR Code                                          |
 | UDP Tunnel  | UDP Custom, ZIVPN UDP, BadVPN UDPGW                                               |
-| Management  | Backup, Domain Manager, Speedtest, Service Checker, Traffic Monitor, **Auto Update** |
+| Management  | Backup, Domain Manager + **Auto SSL**, Speedtest, Service Checker, Traffic Monitor, Auto Update |
+| SSL/TLS     | **Auto SSL Certificate**, **SSL Verify Tool**, **Auto Renew**, Let's Encrypt Integration |
 | Dashboard   | Interactive Panel, Service Status, User Statistics, Traffic Statistics            |
 | Go Services | Native Dropbear WS, Native Stunnel WS, Multi-Connection Support                   |
 

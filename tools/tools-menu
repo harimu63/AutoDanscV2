@@ -13,9 +13,10 @@ echo -e "${CYAN}                 ⚙️ MENU TOOLS                  ${NC}"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${GREEN}[1]${NC} Backup & Restore Config"
 echo -e "${GREEN}[2]${NC} Speedtest VPS"
-echo -e "${GREEN}[3]${NC} Ganti Domain XRAY"
+echo -e "${GREEN}[3]${NC} Ganti Domain + Auto SSL"
 echo -e "${GREEN}[4]${NC} Cek status layanan aktif"
 echo -e "${GREEN}[5]${NC} Update Danautoscript"
+echo -e "${GREEN}[6]${NC} Verify SSL Certificate"
 echo -e "${GREEN}[x]${NC} Kembali ke menu utama"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 read -p "👉 Pilih opsi: " opt
@@ -26,6 +27,7 @@ case $opt in
 3) bash /etc/danautoscript/tools/domain.sh ;;
 4) bash /etc/danautoscript/tools/running.sh ;;
 5) bash /etc/danautoscript/tools/update.sh ;;
+6) bash /etc/danautoscript/tools/verify-ssl.sh ;;
 x) menu ;;
 *) echo "❌ Pilihan salah!" ; sleep 1 ; tools-menu ;;
 esac
