@@ -210,6 +210,7 @@ cp -f tools/backup.sh /usr/bin/
 cp -f tools/speedtest.sh /usr/bin/
 cp -f tools/domain.sh /usr/bin/
 cp -f tools/running.sh /usr/bin/
+cp -f tools/update.sh /usr/bin/
 
 cp -f menu.sh /usr/bin/menu
 
@@ -232,6 +233,7 @@ chmod +x /usr/bin/backup.sh
 chmod +x /usr/bin/speedtest.sh
 chmod +x /usr/bin/domain.sh
 chmod +x /usr/bin/running.sh
+chmod +x /usr/bin/update.sh
 
 chmod +x ssh/*.sh
 chmod +x xray/*.sh

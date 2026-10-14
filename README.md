@@ -8,7 +8,7 @@
 | XRAY Core   | VMess, VLESS, Trojan, Shadowsocks, gRPC, NGINX Reverse Proxy, Auto SSL            |
 | WireGuard   | WireGuard VPN, Client Generator, QR Code                                          |
 | UDP Tunnel  | UDP Custom, ZIVPN UDP, BadVPN UDPGW                                               |
-| Management  | Backup, Domain Manager, Speedtest, Service Checker, Traffic Monitor               |
+| Management  | Backup, Domain Manager, Speedtest, Service Checker, Traffic Monitor, **Auto Update** |
 | Dashboard   | Interactive Panel, Service Status, User Statistics, Traffic Statistics            |
 | Go Services | Native Dropbear WS, Native Stunnel WS, Multi-Connection Support                   |
 
@@ -26,6 +26,26 @@ menu
 
 ---
 
+## 🔄 Update Script
+
+Update to latest version from GitHub:
+
+```bash
+# Via menu
+menu → Tools → Update Danautoscript
+
+# Or direct command
+bash /etc/danautoscript/tools/update.sh
+```
+
+Auto update features:
+- ✅ Download latest from GitHub (harimu63/danautoscript)
+- ✅ Auto backup before update
+- ✅ Rollback on failure
+- ✅ Version tracking
+
+---
+
 ## Quick Install
 
 > Note: This script must be run as root!
@@ -40,7 +60,7 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 # clone the repos
-git clone https://github.com/yourusername/danautoscript.git
+git clone https://github.com/harimu63/danautoscript.git
 cd danautoscript
 
 # run main installer

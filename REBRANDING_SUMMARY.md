@@ -5,12 +5,12 @@ Berhasil mengubah **AutoscriptXRAY** menjadi **DANAUTOSCRIPT** dengan branding *
 
 ---
 
-## 📊 Total Files Modified: 28 Files
+## 📊 Total Files Modified: 32 Files
 
 ### ✅ Core Files (3)
-1. ✓ `setup.sh` - Main installer
+1. ✓ `setup.sh` - Main installer (added update.sh)
 2. ✓ `menu.sh` - Dashboard utama
-3. ✓ `README.md` - Documentation
+3. ✓ `README.md` - Documentation (added update info)
 
 ### ✅ Installation Scripts (5)
 4. ✓ `install/nginx.sh`
@@ -19,7 +19,7 @@ Berhasil mengubah **AutoscriptXRAY** menjadi **DANAUTOSCRIPT** dengan branding *
 7. ✓ `install/wg.sh`
 8. ✓ `install/zivpn.sh`
 
-### ✅ Menu Management (8)
+### ✅ Menu Management (9)
 9. ✓ `ssh/m-ssh`
 10. ✓ `xray/m-vmess`
 11. ✓ `xray/m-vless`
@@ -27,22 +27,26 @@ Berhasil mengubah **AutoscriptXRAY** menjadi **DANAUTOSCRIPT** dengan branding *
 13. ✓ `xray/m-ssws`
 14. ✓ `wg/m-wg`
 15. ✓ `udp/m-zivpn`
-16. ✓ `tools/tools-menu`
+16. ✓ `tools/tools-menu` (added update option)
+17. ✓ `uninstall.sh`
 
 ### ✅ UDP Scripts (4)
-17. ✓ `udp/add-zivpn.sh`
-18. ✓ `udp/del-zivpn.sh`
-19. ✓ `udp/trial-zivpn.sh`
-20. ✓ `udp/renew-zivpn.sh`
+18. ✓ `udp/add-zivpn.sh`
+19. ✓ `udp/del-zivpn.sh`
+20. ✓ `udp/trial-zivpn.sh`
+21. ✓ `udp/renew-zivpn.sh`
 
-### ✅ Uninstaller (1)
-21. ✓ `uninstall.sh`
+### ✅ New Tool Script (1)
+22. ✓ `tools/update.sh` - **Auto update from GitHub**
 
-### ✅ New Documentation (4)
-22. ✓ `BRANDING.md` - Branding info
-23. ✓ `CHANGELOG.md` - Change history
-24. ✓ `INSTALL_GUIDE.md` - Installation guide
-25. ✓ `REBRANDING_SUMMARY.md` - This file
+### ✅ New Documentation (7)
+23. ✓ `BRANDING.md` - Branding info
+24. ✓ `CHANGELOG.md` - Change history
+25. ✓ `INSTALL_GUIDE.md` - Installation guide
+26. ✓ `REBRANDING_SUMMARY.md` - This file
+27. ✓ `UPDATE_FEATURE.md` - Update feature docs
+28. ✓ `version.txt` - Version tracking
+29. ✓ `test-branding.sh` - Testing script
 
 ---
 
@@ -89,15 +93,38 @@ NEW: "DANAUTOSCRIPT PANEL"
 ✅ All script headers updated
 ✅ All menu titles updated
 ✅ All license info updated
+✅ **Auto update feature added**
+✅ **GitHub integration (harimu63/danautoscript)**
+
+---
+
+## 🆕 NEW: Auto Update Feature
+
+### Fitur Baru yang Ditambahkan:
+- ✅ Auto update script (`tools/update.sh`)
+- ✅ Update menu option in Tools
+- ✅ GitHub integration (harimu63/danautoscript)
+- ✅ Auto backup before update
+- ✅ Rollback on failure
+- ✅ Version tracking (version.txt)
+
+### Cara Menggunakan:
+```bash
+# Via menu
+menu → [8] TOOLS → [5] Update Danautoscript
+
+# Or direct
+bash /etc/danautoscript/tools/update.sh
+```
 
 ---
 
 ## 🚀 Next Steps
 
-### 1. Update Repository URL
-Ganti URL di `README.md` dan `INSTALL_GUIDE.md`:
+### 1. Update Repository URL (Already Set!)
+Repository URL sudah diset ke:
 ```bash
-git clone https://github.com/YOURUSERNAME/danautoscript.git
+git clone https://github.com/harimu63/danautoscript.git
 ```
 
 ### 2. Test Installation
@@ -107,10 +134,16 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-### 3. Push to Git
+### 3. Test Update Feature
+```bash
+# After installation
+menu → Tools → Update Danautoscript
+```
+
+### 4. Push to Git
 ```bash
 git add .
-git commit -m "Rebranding: AutoscriptXRAY to Danautoscript by GEN"
+git commit -m "Rebranding: AutoscriptXRAY to Danautoscript by GEN + Auto Update Feature"
 git push origin main
 ```
 
@@ -137,6 +170,10 @@ git push origin main
 2. **CHANGELOG.md** - Riwayat perubahan lengkap
 3. **INSTALL_GUIDE.md** - Panduan instalasi detail
 4. **REBRANDING_SUMMARY.md** - Ringkasan rebranding
+5. **UPDATE_FEATURE.md** - Dokumentasi fitur auto update
+6. **tools/update.sh** - Script auto update dari GitHub
+7. **version.txt** - File tracking versi
+8. **test-branding.sh** - Script testing branding
 
 ---
 
@@ -163,6 +200,8 @@ Sebelum deploy, pastikan test:
 - [ ] Branding "DANAUTOSCRIPT" dan "GEN" muncul di semua menu
 - [ ] Path `/etc/danautoscript/` terbuat dengan benar
 - [ ] Semua submenu berfungsi normal
+- [ ] **Update feature berfungsi (menu → Tools → Update)**
+- [ ] **Version tracking bekerja dengan baik**
 - [ ] Uninstall script bekerja dengan benar
 
 ---
