@@ -12,9 +12,10 @@ echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━�
 echo -e "${CYAN}             ⚙️  MENU TROJAN XRAY              ${NC}"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${GREEN}[1]${NC} Tambah Akun Trojan"
-echo -e "${GREEN}[2]${NC} Hapus Akun Trojan"
-echo -e "${GREEN}[3]${NC} Cek Login Trojan"
-echo -e "${GREEN}[4]${NC} Perpanjang Masa Aktif Akun"
+echo -e "${GREEN}[2]${NC} Trial Trojan (60 menit) ⏰"
+echo -e "${GREEN}[3]${NC} Hapus Akun Trojan"
+echo -e "${GREEN}[4]${NC} Cek Login Trojan"
+echo -e "${GREEN}[5]${NC} Perpanjang Masa Aktif Akun"
 echo -e "${GREEN}[x]${NC} Kembali ke menu utama"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
@@ -26,15 +27,19 @@ bash /etc/danautoscript/xray/add-trojan.sh
 ;;
 
 2) 
-bash /etc/danautoscript/xray/del-trojan.sh 
+bash /etc/danautoscript/xray/trial-trojan.sh 
 ;;
 
 3)
-bash /etc/danautoscript/xray/cek-trojan.sh 
+bash /etc/danautoscript/xray/del-trojan.sh 
 ;;
 
 4) 
 bash /etc/danautoscript/xray/renew-trojan.sh 
+;;
+
+5)
+bash /etc/danautoscript/xray/cek-trojan.sh 
 ;;
 
 x) 

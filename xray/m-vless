@@ -11,9 +11,10 @@ echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━�
 echo -e "${CYAN}              ⚙️ MENU VLESS XRAY              ${NC}"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${GREEN}[1]${NC} Tambah Akun VLESS"
-echo -e "${GREEN}[2]${NC} Hapus Akun VLESS"
-echo -e "${GREEN}[3]${NC} Cek Login VLESS"
-echo -e "${GREEN}[4]${NC} Perpanjang Masa Aktif Akun"
+echo -e "${GREEN}[2]${NC} Trial VLESS (60 menit) ⏰"
+echo -e "${GREEN}[3]${NC} Hapus Akun VLESS"
+echo -e "${GREEN}[4]${NC} Cek Login VLESS"
+echo -e "${GREEN}[5]${NC} Perpanjang Masa Aktif Akun"
 echo -e "${GREEN}[x]${NC} Kembali ke menu utama"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
@@ -25,14 +26,18 @@ bash /etc/danautoscript/xray/add-vless.sh
 ;;
 
 2)
-bash /etc/danautoscript/xray/del-vless.sh
+bash /etc/danautoscript/xray/trial-vless.sh
 ;;
 
 3)
-bash /etc/danautoscript/xray/cek-vless.sh
+bash /etc/danautoscript/xray/del-vless.sh
 ;;
 
 4)
+bash /etc/danautoscript/xray/cek-vless.sh
+;;
+
+5)
 bash /etc/danautoscript/xray/renew-vless.sh
 ;;
 

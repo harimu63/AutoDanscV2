@@ -260,6 +260,17 @@ cp -r tools/* /etc/danautoscript/tools/
 chmod +x /etc/danautoscript/*/*.sh
 
 # ==========================================
+# SETUP CRON FOR AUTO DELETE TRIAL
+# ==========================================
+
+info "Setting up cron for auto delete trial accounts..."
+
+# Add cron job to check every minute
+(crontab -l 2>/dev/null | grep -v "cleanup-trial.sh"; echo "* * * * * /etc/danautoscript/xray/cleanup-trial.sh >> /var/log/trial-cleanup.log 2>&1") | crontab -
+
+chmod +x /etc/danautoscript/xray/cleanup-trial.sh
+
+# ==========================================
 # AUTO MENU LOGIN
 # ==========================================
 

@@ -65,21 +65,29 @@ DISK=$(df -h / | awk 'NR==2{print $3 "/" $2}')
 
 # ================= NETWORK =================
 
-IFACE=$(ip route get 1.1.1.1 | awk '{print $5; exit}')
+IFACE=$(ip route get 1.1.1.1 2>/dev/null | awk '{print $5; exit}')
 
-MONTH_NAME=$(date +"%Y-%m")
+# Check if vnstat database exists, if not create it
+if [[ ! -z "$IFACE" ]]; then
+    if ! vnstat -i "$IFACE" &>/dev/null; then
+        vnstat -i "$IFACE" --create &>/dev/null
+        sleep 1
+    fi
+fi
 
-TODAY=$(vnstat -i $IFACE | awk '/today/ {print $8" "$9}')
+MONTH_NAME=$(date +"%b %Y")
 
-YESTERDAY=$(vnstat -i $IFACE | awk '/yesterday/ {print $8" "$9}')
+TODAY=$(vnstat -i "$IFACE" 2>/dev/null | grep "today" | awk '{print $8" "$9}')
 
-MONTH=$(vnstat -i $IFACE | awk -v m="$MONTH_NAME" '
-$1 ~ m {print $8" "$9}
-')
+YESTERDAY=$(vnstat -i "$IFACE" 2>/dev/null | grep "yesterday" | awk '{print $8" "$9}')
 
-TOTAL_BW=$(vnstat --oneline | cut -d; -f15)
+MONTH=$(vnstat -i "$IFACE" -m 2>/dev/null | grep "$MONTH_NAME" | awk '{print $3" "$4}')
 
+TOTAL_BW=$(vnstat -i "$IFACE" 2>/dev/null | grep "estimated" | awk '{print $5" "$6}')
+
+[[ -z "$TODAY" ]] && TODAY="0 B"
 [[ -z "$YESTERDAY" ]] && YESTERDAY="0 B"
+[[ -z "$MONTH" ]] && MONTH="0 B"
 [[ -z "$TOTAL_BW" ]] && TOTAL_BW="0 B"
 
 # ================= STATUS =================
@@ -106,14 +114,6 @@ if [[ $WG == "active" ]]; then
 WG="${GREEN}🟢 ONLINE${NC}"
 else
 WG="${RED}🔴 OFFLINE${NC}"
-fi
-
-ZIVPN=$(systemctl is-active zivpn)
-
-if [[ $ZIVPN == "active" ]]; then
-ZIVPN="${GREEN}🟢 ONLINE${NC}"
-else
-ZIVPN="${RED}🔴 OFFLINE${NC}"
 fi
 
 UDPCUSTOM=$(systemctl is-active udp-custom)
@@ -158,11 +158,9 @@ TROJAN=$(jq '[.inbounds[] | select(.tag=="trojan-ws-tls").settings.clients[]] | 
 
 SSWS=$(jq '[.inbounds[] | select(.tag=="ssws-ws-tls").settings.clients[]] | length' $CONFIG 2>/dev/null)
 
-ZIVPN_USER=$(grep -vc '^$' /etc/zivpn/users.db 2>/dev/null)
-
 SSH_USER=$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)
 
-TOTAL=$((VMESS + VLESS + TROJAN + SSWS + ZIVPN_USER + SSH_USER))
+TOTAL=$((VMESS + VLESS + TROJAN + SSWS + SSH_USER))
 
 ONLINE=$(tail -n 500 /var/log/xray/access.log 2>/dev/null | 
 grep -Eo 'tcp:[0-9]+.[0-9]+.[0-9]+.[0-9]+' | 
@@ -226,7 +224,7 @@ echo -e "${CYAN}┌──────────────── USER STATS �
 
 echo -e " ${WHITE}VMESS${NC} : $VMESS     ${WHITE}VLESS${NC} : $VLESS     ${WHITE}TROJAN${NC} : $TROJAN"
 
-echo -e " ${WHITE}SSWS${NC}  : $SSWS     ${WHITE}SSH${NC}   : $SSH_USER     ${WHITE}ZIVPN${NC} : $ZIVPN_USER"
+echo -e " ${WHITE}SSWS${NC}  : $SSWS     ${WHITE}SSH${NC}   : $SSH_USER"
 
 echo -e " ${WHITE}TOTAL${NC} : $TOTAL    ${WHITE}ONLINE${NC} : $ONLINE"
 
@@ -238,8 +236,8 @@ echo -e "${BLUE}┌──────────────── SERVICE ─�
 
 echo -e " ${WHITE}XRAY${NC}      : $XRAY  ${WHITE}NGINX${NC}     : $NGINX     "
 echo -e " ${WHITE}DROPBEAR${NC}  : $DROPBEAR  ${WHITE}WIREGUARD${NC} : $WG        "
-echo -e " ${WHITE}UDP CUSTOM${NC}: $UDPCUSTOM  ${WHITE}UDP ZIVPN${NC} : $ZIVPN     "
-echo -e " ${WHITE}SSH WS${NC}    : $DROPBEARWS ${WHITE}WSS${NC}       : $STUNNELWS "
+echo -e " ${WHITE}UDP CUSTOM${NC}: $UDPCUSTOM  ${WHITE}SSH WS${NC}    : $DROPBEARWS"
+echo -e " ${WHITE}WSS${NC}       : $STUNNELWS"
 
 echo -e "${BLUE}└─────────────────────────────────────────────┘${NC}"
 
@@ -247,13 +245,12 @@ echo -e "${BLUE}└────────────────────�
 
 echo -e "${RED}┌──────────────── MAIN MENU ──────────────────┐${NC}"
 
-echo -e " [1] ${WHITE}SSH${NC}          [8] ${WHITE}TOOLS${NC}"
-echo -e " [2] ${WHITE}VMESS${NC}        [9] ${WHITE}STATUS${NC}"
-echo -e " [3] ${WHITE}VLESS${NC}        [10] ${WHITE}CLEAR RAM${NC}"
-echo -e " [4] ${WHITE}TROJAN${NC}       [11] ${WHITE}REBOOT VPS${NC}"
-echo -e " [5] ${WHITE}SSWS${NC}         [12] ${WHITE}UNINSTALL${NC}"
-echo -e " [6] ${WHITE}WIREGUARD${NC}    [13] ${WHITE}UDP CUSTOM${NC}"
-echo -e " [7] ${WHITE}UDP ZIVPN${NC}    [x] ${WHITE}EXIT${NC}"
+echo -e " [1] ${WHITE}SSH${NC}          [7] ${WHITE}TOOLS${NC}"
+echo -e " [2] ${WHITE}VMESS${NC}        [8] ${WHITE}STATUS${NC}"
+echo -e " [3] ${WHITE}VLESS${NC}        [9] ${WHITE}CLEAR RAM${NC}"
+echo -e " [4] ${WHITE}TROJAN${NC}       [10] ${WHITE}REBOOT VPS${NC}"
+echo -e " [5] ${WHITE}SSWS${NC}         [11] ${WHITE}UNINSTALL${NC}"
+echo -e " [6] ${WHITE}WIREGUARD${NC}    [x] ${WHITE}EXIT${NC}"
 
 echo -e "${RED}└─────────────────────────────────────────────┘${NC}"
 
@@ -271,13 +268,11 @@ case $menu in
 4) m-trojan ;;
 5) m-ssws ;;
 6) m-wg ;;
-7) m-zivpn ;;
-8) tools-menu ;;
-9) running ;;
-10) clearcache ;;
-11) reboot ;;
-12) bash /root/uninstall.sh ;;
-13) systemctl status udp-custom ;;
+7) tools-menu ;;
+8) running ;;
+9) sync; echo 3 > /proc/sys/vm/drop_caches; swapoff -a && swapon -a ;;
+10) reboot ;;
+11) bash /root/uninstall.sh ;;
 x) exit ;;
 *)
 echo -e "${RED}❌ Invalid menu!${NC}"
